@@ -1,1 +1,1 @@
-# becstudomvc
+# kisanrajmvc
