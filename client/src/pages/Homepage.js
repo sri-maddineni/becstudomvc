@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import Header from "../components/layouts/Header";
 import Footer from "../components/layouts/Footer";
 import { Toaster } from "react-hot-toast";
@@ -6,48 +6,46 @@ import "./Homepage.css";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/UIComponents/Navbar";
 import Nav from "../components/UIComponents/Nav";
-import AuthContext from "../context/AuthContext";
+import { Carousel } from 'antd';
 
-
-export const Homepage = () => {
-
+const Homepage = () => {
   const navigate = useNavigate();
-
-  const [auth, setAuth] = useContext(AuthContext);
 
   return (
     <>
       <Nav />
       <Toaster />
-      <div
-        className="container"
-        style={{
-          alignItems: "center",
-          justifyContent: "center",
-          display: "flex",
-          flexDirection: "column",
-          minHeight: "60vh",
-        }}
-      >
-        <div
-          className="searcher m-2 text-center"
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-          }}
-        >
-          <input type="text" placeholder="enter product" className="m-2" />
-          <input type="text" placeholder="enter location" className="m-2" />
-
-        </div>
-        <div>
-          <button className="btn btn-md btn-info m-2" style={{ width: "4rem", padding: "0.3rem", borderRadius: "0.4rem" }} onClick={() => { auth?.user ? navigate("/dashboard/user/buy-commodity") : navigate("/dashboard/buy-commodity") }}>Buy</button>
-          <button className="btn btn-md btn-info m-2" style={{ width: "4rem", padding: "0.3rem", borderRadius: "0.4rem" }} onClick={() => { navigate("/dashboard/user/sell-commodity") }}>Sell</button>
-          <button className="btn btn-md btn-info m-2" style={{ width: "4rem", padding: "0.3rem", borderRadius: "0.4rem" }} onClick={() => { navigate("/dashboard/user/hire-equipment") }}>Hire</button>
+      <div className="d-flex justify-content-around">
+        <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+          <ol className="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div className="carousel-inner">
+            <div className="carousel-item m-2 active">
+              <img className="d-block w-100" src="https://im.hunt.in/cg/Warangal/City-Guide/Paying-Guest-House-warangal.jpeg" alt="First slide" />
+            </div>
+            <div className="carousel-item m-2">
+              <img className="d-block w-100" src="https://donboscobangalore.education/img/sections/slider/placements1.jpg" alt="Second slide" />
+            </div>
+            <div className="carousel-item m-2">
+              <img className="d-block w-100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEe6T3LnFmlpF4WQhakzi-tP8uXPrSWkecztIs35D1Eczf8vSwGEzjUjTuL08V0EWJ0TI&usqp=CAU" alt="Third slide" />
+            </div>
+          </div>
+          <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span className="sr-only">Previous</span>
+          </a>
+          <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span className="sr-only">Next</span>
+          </a>
         </div>
       </div>
       <Footer />
     </>
   );
 };
+
+export default Homepage;

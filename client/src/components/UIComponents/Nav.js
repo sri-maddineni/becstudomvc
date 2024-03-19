@@ -33,49 +33,67 @@ export default function Nav() {
                     </button>
                     <div className="collapse navbar-collapse" id="navi">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li className="nav-item">
+                                <Link className="nav-link active p-3" aria-current="page" to="/hostels">Hostels</Link>
+                            </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link text-white p-3 disabled" href='#' id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false" >
-                                    Buy
+                                    Rooms
                                 </a>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><Link className="dropdown-item" to={auth?.user? "/dashboard/user/buy-commodity":"/buy-commodity"} >Buy Commodity</Link></li>
-                                    <li><Link className="dropdown-item" to="/cp" >Buy Equipment</Link></li>
+                                    <li><Link className="dropdown-item" to="/dashboard/user/sell-commodity" >Rooms</Link></li>
+                                    <li><Link className="dropdown-item" to="/cp" >Flats</Link></li>
 
                                 </ul>
                             </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link text-white p-3 disabled" href='#' id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false" >
-                                    Sell
+                                    Food
                                 </a>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><Link className="dropdown-item" to="/dashboard/user/sell-commodity" >Sell Commodity</Link></li>
-                                    <li><Link className="dropdown-item" to="/cp" >Sell Equipment</Link></li>
-
+                                    <li><Link className="dropdown-item" to="/cp" >Mess</Link></li>
+                                    <li><Link className="dropdown-item" to="/cp" >Curry Points</Link></li>
+                                    <li><Link className="dropdown-item" to="/cp" >Food courts</Link></li>
+                                    <li><Link className="dropdown-item" to="/cp" >Biryani points</Link></li>
+                                    <li><Link className="dropdown-item" to="/user/hire-equipment" >Restaurants</Link></li>
                                 </ul>
                             </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link text-white p-3 disabled" href='#' id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false" >
-                                    Hire
+                                    Academics
                                 </a>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><Link className="dropdown-item" to="/user/hire-equipment" >Hire Equipment</Link></li>
-                                    <li><Link className="dropdown-item" to="/cp" >Hire Cold Storages</Link></li>
-
-                                </ul>
-                            </li>
-                            <li className="nav-item dropdown">
-                                <a className="nav-link text-white p-3 disabled" href='#' id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false" >
-                                    Post
-                                </a>
-                                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><Link className="dropdown-item" to={auth?.user ? "/dashboard/user/post-potential" : "/login"} >Post Requirement</Link></li>
-                                    <li><Link className="dropdown-item" to="/dashboard/user/post-equipment" >Post Equipment</Link></li>
+                                    <li><Link className="dropdown-item" to={auth?.user ? "/dashboard/user/post-potential" : "/login"} >Attendence</Link></li>
+                                    <li><Link className="dropdown-item" to={auth?.user ? "/dashboard/user/post-potential" : "/login"} >Notices</Link></li>
+                                    <li><Link className="dropdown-item" to="/dashboard/user/post-equipment" >Internals Calc</Link></li>
+                                    <li><Link className="dropdown-item" to="/dashboard/user/post-equipment" >Techies</Link></li>
+                                    <li><Link className="dropdown-item" to="/dashboard/user/post-equipment" >Materials</Link></li>
+                                    <li><Link className="dropdown-item" to="/dashboard/user/post-equipment" >Important links</Link></li>
                                 </ul>
 
                             </li>
+
+                            <li className='nav-item dropdown'>
+                                <a href="" className="nav-link text-white p-3 disabled">
+                                    Placements
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="../placements/plamaterials.html">Placement Materials </a></li>
+                                    <li>
+                                        <a class="dropdown-item disabled" href="#">Placement offers</a>
+
+                                        <ul class="submenu">
+                                            <li><a class="dropdown-item" href="../placements/y20placements.html">Y20 Placements</a></li>
+                                        </ul>
+                                    </li>
+
+
+                                </ul>
+                            </li>
+
 
                             <li className="nav-item">
-                                <Link className="nav-link active p-3" aria-current="page" to="/coldstorages">Cold Storages</Link>
+                                <Link className="nav-link active p-3" aria-current="page" to="/previous-papers">Previous papers</Link>
                             </li>
 
                             { /*<li className="nav-item">
@@ -97,7 +115,7 @@ export default function Nav() {
                             <>
                                 <ul className="navbar-nav p-2 mx-5">
                                     <li className="nav-item">
-                                        <Link className="nav-link active p-3" aria-current="page" to="/dashboard/user/listings-posted">Listings</Link>
+                                        <Link className="nav-link active p-3" aria-current="page" to="/dashboard/user/listings-posted">Posts</Link>
                                     </li>
 
                                     <li className="nav-item dropdown">
@@ -127,7 +145,7 @@ export default function Nav() {
                                     <li className="nav-item dropdown active m-2">
                                         <a className="nav-link me-auto text-white disabled" href='#' data-bs-toggle="dropdown">{auth?.user?.name}   <i className="fa-solid fa-sort-down"></i></a>
                                         <ul className="dropdown-menu">
-                                            <li><Link className="dropdown-item" to="/dashboard/user/profile"> Profile</Link></li>
+                                            <li><Link className="dropdown-item" to={`/user/${auth?.user?.regno}/profile`}>Profile</Link></li>
                                             <li><a className="dropdown-item" onClick={handleLogout}> Logout </a></li>
                                         </ul>
                                     </li>
@@ -138,7 +156,7 @@ export default function Nav() {
                                             <li><a className="dropdown-item" onClick={handleLogout}> English </a></li>
                                         </ul>
                                     </li>
-                                    
+
                                 </ul>
                             </>
                         )}
