@@ -36,6 +36,7 @@ import PostRequirement from "./pages/user/PostRequirement"
 import NegHistoy from './pages/user/NegHistory'
 import AddHostel from './pages/admin/AddHostel';
 import PreviousPapers from './pages/nonLoggedin/PreviousPapers';
+import AddPaper from './pages/admin/AddPaper';
 
 
 
