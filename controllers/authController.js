@@ -5,7 +5,7 @@ import Jwt from "jsonwebtoken";
 
 export const registerController = async (req, res) => {
   try {
-    const { name, email, password, phone, address, answer,pincode,latitude, longitude } = req.body;
+    const { name, email, password, phone, answer,regno } = req.body;
 
     if (!name) {
       return res.send({ message: "Name is required" });
@@ -23,20 +23,18 @@ export const registerController = async (req, res) => {
       return res.send({ message: "phone no is required" });
     }
 
-    if (!address ) {
+    if (!regno ) {
       return res.send({ message: "address is required" });
     }
 
     if (!answer) {
       return res.send({ message: "answer is required" });
     }
-    if (!pincode) {
-      return res.send({ message: "pincode is required" });
-    }
+    
 
     //existing user checking
 
-    const existingUser = await userModel.findOne({ email });
+    const existingUser = await userModel.findOne({ regno });
 
     if (existingUser) {
       return res.status(200).send({
@@ -54,12 +52,10 @@ export const registerController = async (req, res) => {
       name,
       email,
       phone,
-      address,
+      
       password: hashedPassword,
       answer,
-      pincode,
-      latitude,
-      longitude
+      regno
     }).save();
 
     res.status(201).send({

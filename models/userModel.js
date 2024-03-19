@@ -30,41 +30,16 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    address: {
-      type: String,
-      required: true,
-    },
-    pincode:{
-      type:Number,
-      required:true,
-    },
-    latitude:{
-      type:Number,
-      required:true
-    },
-    longitude:{
-      type:Number,
-      required:true
-    },
+    
     answer: {
       type: String,
       required: true,
     },
-    proposalsSent: {
-      type: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'products' // Assuming your product model is named 'Product'
-      }],
-      default: []
+    regno: {
+      type: String,
+      required: true,
     },
-    proposalsReceived: {
-      type: Map,
-      of: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'products' // Assuming your product model is named 'Product'
-      }],
-      default: new Map()
-    },
+    
     role: {
       type: String,
       default: '1', // Assuming role is a string

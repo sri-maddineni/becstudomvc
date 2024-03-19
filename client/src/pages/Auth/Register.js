@@ -13,17 +13,12 @@ export const Register = () => {
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
   const [answer, setAnswer] = useState("");
-  const [address, setAddress] = useState("");
-  const [pincode, setPincode] = useState("");
-  const [latitude, setLatitude] = useState("");
-  const [longitude, setLongitude] = useState("");
+  const [regno,setRegno]=useState("")
 
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    if (pincode.length > 6) {
-      toast("Please enter valid pincode");
-    } else {
+  
       e.preventDefault();
 
       try {
@@ -35,10 +30,8 @@ export const Register = () => {
             password,
             phone,
             answer,
-            address,
-            pincode,
-            latitude,
-            longitude,
+            regno                 
+            
           }
         );
 
@@ -52,24 +45,10 @@ export const Register = () => {
         console.error(error);
         toast.error("Error in registration!");
       }
-    }
+    
   };
 
-  const getLocation = () => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          setLatitude(position.coords.latitude);
-          setLongitude(position.coords.longitude);
-        },
-        (error) => {
-          console.error("Error getting location:", error.message);
-        }
-      );
-    } else {
-      console.error("Geolocation is not supported by this browser.");
-    }
-  };
+ 
 
   return (
     <>
@@ -143,62 +122,24 @@ export const Register = () => {
                 required
               />
             </div>
-
             <div className="mb-3">
               <input
                 type="text"
                 className="form-control"
-                value={address}
+                value={regno}
                 onChange={(e) => {
-                  setAddress(e.target.value);
+                  setRegno(e.target.value);
                 }}
-                placeholder="Enter Address"
+                placeholder="Enter reg no"
                 required
               />
             </div>
 
-            <div
-              className="mb-3"
-              style={{ display: "flex", flexDirection: "row" }}
-            >
-              <input
-                type="number"
-                className="form-control m-1"
-                value={pincode}
-                onChange={(e) => {
-                  setPincode(e.target.value);
-                }}
-                placeholder="Enter Pincode"
-                required
-              />
-            </div>
+           
 
-            <div
-              className="mb-3"
-              style={{ display: "flex", alignItems: "center" }}
-            >
-              <input
-                type="number"
-                className="form-control m-1"
-                value={latitude}
-                placeholder="Enter latitude"
-                required
-              />
-              <input
-                type="number"
-                className="form-control m-1"
-                value={longitude}
-                placeholder="Enter Longitude"
-                required
-              />
-              <button
-                className="btn btn-sm btn-success m-1"
-                onClick={getLocation}
-                style={{ padding: "0.5rem 1rem" }}
-              >
-                <i className="fas fa-map-marker-alt"></i>
-              </button>
-            </div>
+            
+
+            
 
             <button type="submit" className="btn btn-primary">
               Submit
