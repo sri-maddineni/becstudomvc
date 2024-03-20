@@ -52,7 +52,6 @@ export const registerController = async (req, res) => {
       name,
       email,
       phone,
-
       password: hashedPassword,
       answer,
       regno
@@ -116,6 +115,7 @@ export const loginController = async (req, res) => {
         phone: user.phone,
         regno: user.regno,
         role: user.role,
+        token
       },
       token
     });

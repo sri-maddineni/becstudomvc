@@ -4,12 +4,13 @@ import dotenv from "dotenv";
 import morgan from "morgan";
 import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoute.js"
+import QpaperRoutes from "./routes/QpaperRoutes.js"
 import cors from "cors";
-import CategoryRoutes from "./routes/CategoryRoutes.js"
-import CommodityRoutes from "./routes/CommodityRoutes.js"
+
+
 import UserRoutes from "./routes/UserRoutes.js"
-import EquipmentRoutes from "./routes/EquipmentRoutes.js"
-import RequirementRoutes from "./routes/RequirementRoutes.js"
+
+
 
 //configure environment
 dotenv.config();
@@ -29,20 +30,13 @@ app.use(express.json());
 //routes all
 app.use("/api/v1/auth", authRoutes);
 
-
-//category routes
-app.use("/api/v1/category", CategoryRoutes)
-
-
-//for products
-app.use("/api/v1/products", CommodityRoutes)
+//routes all
+app.use("/api/v1/subjects",QpaperRoutes );
 
 
-//for equipment
-app.use("/api/v1/equipment",EquipmentRoutes)
 
-//for requirements posting and chat conversational
-app.use("/api/v1/requirements",RequirementRoutes)
+
+
 
 //to get userdata
 app.use("/api/v1/users", UserRoutes)
