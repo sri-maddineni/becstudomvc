@@ -21,6 +21,11 @@ const QPaperSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    des: {
+      type: String,
+      required: true,
+    },
+    
     
     
   },

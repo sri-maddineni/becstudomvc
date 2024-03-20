@@ -1,12 +1,9 @@
 import express from "express";
-
-
-import Jwt from "jsonwebtoken";
 import QPaperModel from "../models/QPaperModel.js";
 
 export const CreateQpaper = async (req, res) => {
     try {
-        const { sub, code, link, dept } = req.body;
+        const { sub, code, link, dept, des } = req.body;
 
         if (!sub) {
             return res.send({ message: "sub is required" });
@@ -23,12 +20,16 @@ export const CreateQpaper = async (req, res) => {
         if (!dept) {
             return res.send({ message: "dept no is required" });
         }
+        if (!des) {
+            return res.send({ message: "des no is required" });
+        }
 
         const subject = await new QPaperModel({
             sub,
             code,
             dept,
             link,
+            des
         }).save();
 
         res.status(201).send({
