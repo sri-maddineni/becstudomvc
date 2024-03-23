@@ -25,6 +25,7 @@ import Profile from './pages/user/Profile';
 import AddHostel from './pages/admin/AddHostel';
 import PreviousPapers from './pages/nonLoggedin/PreviousPapers';
 import AddPaper from './pages/admin/AddPaper';
+import PlacementMaterials from './pages/user/PlacementMaterials';
 
 
 
@@ -65,6 +66,7 @@ function App() {
 
           <Route path='/forgot-password' element={<ForgotPassword />} />
           <Route path='/previous-papers' element={<PreviousPapers />} />
+          <Route path='/placement-materials' element={<PlacementMaterials />} />
 
 
 

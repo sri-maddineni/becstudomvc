@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import AuthContext from '../../context/AuthContext';
 import toast from 'react-hot-toast';
 
@@ -78,7 +78,7 @@ export default function Nav() {
                                     Placements
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="../placements/plamaterials.html">Placement Materials </a></li>
+                                    <li><Link class="dropdown-item" to="/placement-materials">Placement Materials </Link></li>
                                     <li>
                                         <a class="dropdown-item disabled" href="#">Placement offers</a>
 
