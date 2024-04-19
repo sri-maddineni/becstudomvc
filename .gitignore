@@ -11979,3 +11979,7 @@ node_modules/yargs-parser/build/lib/tokenize-arg-string.js
 node_modules/yargs-parser/build/lib/yargs-parser-types.js
 node_modules/yargs-parser/build/lib/yargs-parser.js
 client/src/pages/ContextUser/Responses.js
+.env
+
+
+
