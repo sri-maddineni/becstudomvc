@@ -15,15 +15,15 @@ const Homepage = () => {
     <>
       <Nav />
       <Toaster />
-      <div class="container text-center">
-        <div id="carouselExampleSlidesOnly" class="carousel slide" style={{"margin": "50px", "display": "inline-block"}}
+      <div className="container text-center">
+        <div id="carouselExampleSlidesOnly" className="carousel slide" style={{"margin": "50px", "display": "inline-block"}}
           data-ride="carousel" data-interval="5000">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img class="d-block" src="https://shorturl.at/mEFY0" alt="First slide"/>
+          <div className="carousel-inner">
+            <div className="carousel-item active">
+              <img className="d-block" src="https://shorturl.at/mEFY0" alt="First slide"/>
             </div>
-            <div class="carousel-item">
-              <img class="d-block" src="https://shorturl.at/iqEOQ" alt="Second slide"/>
+            <div className="carousel-item">
+              <img className="d-block" src="https://shorturl.at/iqEOQ" alt="Second slide"/>
             </div>
 
           </div>
