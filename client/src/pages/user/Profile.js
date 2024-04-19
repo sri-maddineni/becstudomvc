@@ -16,7 +16,7 @@ const Profile = () => {
         <>
 
             <Nav />
-            <div style={{ flex: "wrap", display: "flex", flexDirection: "row" }}>
+            <div style={{ flex: "wrap", display: "flex", flexDirection: "row" }} className="m-3">
                 <div className="admin m-2" style={{ width: "20%" }}>
                     <AdminMenu />
                 </div>
@@ -30,9 +30,9 @@ const Profile = () => {
                 </div>
             </div>
 
-            <pre>
-                {JSON.stringify(auth?.user, 4)}
-            </pre>
+            <p className="m-5">
+                {JSON.stringify(auth?.user)}
+            </p>
 
 
             <Footer />

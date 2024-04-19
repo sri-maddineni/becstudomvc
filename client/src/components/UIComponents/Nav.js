@@ -114,48 +114,21 @@ export default function Nav() {
                         ) : (
                             <>
                                 <ul className="navbar-nav p-2 mx-5">
-                                    <li className="nav-item">
-                                        <Link className="nav-link active p-3" aria-current="page" to="/dashboard/user/listings-posted">Posts</Link>
-                                    </li>
+                                   
 
-                                    <li className="nav-item dropdown">
-                                        <a className="nav-link text-white p-3 disabled" href='#' id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false" >
-                                            Responses
-                                        </a>
-                                        <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <li><Link className="dropdown-item" to="/dashboard/user/proposals-recieved" >Proposals Recieved</Link></li>
-                                            <li><Link className="dropdown-item" to="/dashboard/user/history/negotiations" >Negotiations History</Link></li>
-
-                                        </ul>
-                                    </li>
-                                    <li className="nav-item dropdown">
-                                        <a className="nav-link text-white p-3 disabled" href='#' id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false" >
-                                            History
-                                        </a>
-                                        <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <li><Link className="dropdown-item" to="/mess" >Transactional History</Link></li>
-                                            <li><Link className="dropdown-item" to="/cp" >Negotiations History</Link></li>
-
-                                        </ul>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link className="nav-link active p-3" aria-current="page" to="/Orders">Orders</Link>
-                                    </li>
+                                    
+                                    
+                                    
+                                    
 
                                     <li className="nav-item dropdown active m-2">
-                                        <a className="nav-link me-auto text-white disabled" href='#' data-bs-toggle="dropdown">{auth?.user?.name}   <i className="fa-solid fa-sort-down"></i></a>
+                                        <a className="nav-link me-auto disabled text-warning" style={{color:"yellow"}} href='#' data-bs-toggle="dropdown">{auth?.user?.name}   <i className="fa-solid fa-sort-down"></i></a>
                                         <ul className="dropdown-menu">
                                             <li><Link className="dropdown-item" to={`/user/${auth?.user?.regno}/profile`}>Profile</Link></li>
                                             <li><a className="dropdown-item" onClick={handleLogout}> Logout </a></li>
                                         </ul>
                                     </li>
-                                    <li className="nav-item dropdown active m-2">
-                                        <a className="nav-link me-auto text-white disabled" href='#' data-bs-toggle="dropdown">Language   <i className="fa-solid fa-sort-down"></i></a>
-                                        <ul className="dropdown-menu">
-                                            <li><Link className="dropdown-item" to="/dashboard/user/profile"> Telugu</Link></li>
-                                            <li><a className="dropdown-item" onClick={handleLogout}> English </a></li>
-                                        </ul>
-                                    </li>
+                                    
 
                                 </ul>
                             </>

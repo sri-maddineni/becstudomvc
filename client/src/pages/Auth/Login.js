@@ -37,7 +37,7 @@ export const Login = () => {
           token: res.data.token
         })
 
-        localStorage.setItem("auth", JSON.stringify(res.data))
+        localStorage.setItem("eG3FbKp9tWnR2qP8sYhE1", JSON.stringify(res.data))
         navigate(location.state || "/")
 
 

@@ -20,6 +20,7 @@ const AddPaper = () => {
 
     const handlesubmit = async (e) => {
         e.preventDefault()
+
         const data = { sub, code, link, dept, des }
         try {
             const res = await axios.post(`${process.env.REACT_APP_API}/api/v1/subjects/add-qpapersub`, data)
@@ -51,7 +52,7 @@ const AddPaper = () => {
                     <AdminMenu />
                 </div>
                 <div style={{ width: "65%" }} className='m-2'>
-                    <h5 className='m-2 text-center'>Add paper</h5>
+                    <h2 className='m-2 text-center'>Add paper</h2>
                     <form>
                         <div className="form-group">
                             <input type="text" value={sub} onChange={(e) => setsub(e.target.value)} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter subject name" />
@@ -69,13 +70,17 @@ const AddPaper = () => {
                         <div className="filters m-2 p-2">
 
                             <Radio.Group onChange={(e) => setDept(e.target.value)} value={dept} className="d-flex" style={{ flexDirection: "row" }}>
-                                <Radio value={"cse"} className="m-3">COMPUTERS</Radio>
+                                <Radio value={"computers"} className="m-3">COMPUTERS</Radio>
                                 <Radio value={"ece"} className="m-3">ECE</Radio>
                                 <Radio value={"eee"} className="m-3">EEE</Radio>
+                                <Radio value={"eie"} className="m-3">EIE</Radio>
                                 <Radio value={"civil"} className="m-3">CIVIL</Radio>
                                 <Radio value={"mech"} className="m-3">MECH</Radio>
-                                <Radio value={"gen"} className="m-3">General</Radio>
-                                <Radio value={"year1"} className="m-3">1st Year</Radio>
+                                <Radio value={"mat"} className="m-3">Mat</Radio>
+                                <Radio value={"phy"} className="m-3">Phy</Radio>
+                                <Radio value={"che"} className="m-3">Che</Radio>
+                                <Radio value={"eng"} className="m-3">Eng</Radio>
+                                <Radio value={"others"} className="m-3">Others</Radio>
                             </Radio.Group>
                         </div>
 
