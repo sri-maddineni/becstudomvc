@@ -25,7 +25,7 @@ const Profile = () => {
                 </div>
                 <div className="pre m-2" style={{ width: "20%" }}>
                     <>
-                        {(auth?.user?.role == 0) && <h1>hello admin</h1>}
+                        {(auth?.user?.role === 0) && <h1>hello admin</h1>}
                     </>
                 </div>
             </div>

@@ -23,6 +23,13 @@ const app = express();
 
 //middlewares
 app.use(cors());
+
+// app.use(cors({
+//   origin:"",
+//   methods:["POST",'GET'],
+//   credentials:true
+// }))
+
 app.use(morgan("dev"));
 app.use(express.json());
 
@@ -31,7 +38,7 @@ app.use(express.json());
 app.use("/api/v1/auth", authRoutes);
 
 //routes all
-app.use("/api/v1/subjects",QpaperRoutes );
+app.use("/api/v1/subjects", QpaperRoutes);
 
 
 
@@ -47,11 +54,13 @@ app.get("/", (req, res) => {
   res.send("<h1>world</h1>");
 });
 
-app.use(express.static(path.join(__dirname,"./client/build")))
 
-app.get("*",(req,res)=>{
-  res.sendFile(path.join(__dirname,"./client/build/index.html"))
-})
+
+// app.use(express.static(path.join(__dirname,"./client/build")))
+//for cyclic.sh hosting all these needed
+// app.get("*",(req,res)=>{
+//   res.sendFile(path.join(__dirname,"./client/build/index.html"))
+// })
 
 const PORT = process.env.PORT;
 

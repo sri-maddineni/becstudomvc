@@ -2,7 +2,7 @@ import React from 'react'
 import Header from '../../components/layouts/Header'
 import Footer from '../../components/layouts/Footer'
 import UserMenu from './UserMenu'
-import Navbar from '../../components/UIComponents/Navbar'
+
 
 
 const Dashboard = () => {

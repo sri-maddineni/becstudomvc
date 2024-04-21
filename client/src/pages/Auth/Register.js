@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import Header from "../../components/layouts/Header";
+// import Header from "../../components/layouts/Header";
 import Footer from "../../components/layouts/Footer";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
-import Navbar from "../../components/UIComponents/Navbar";
+// import Navbar from "../../components/UIComponents/Navbar";
 import Nav from "../../components/UIComponents/Nav";
 
 export const Register = () => {

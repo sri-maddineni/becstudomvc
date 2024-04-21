@@ -25,7 +25,7 @@ export default function Footer() {
             <a href="https://www.linkedin.com/company/95768956/" target="_blank" className="me-4 text-danger" style={{ "text-decoration": " none;" }}>
               <i className="fa-brands fa-linkedin me-3 fa-2x"></i>
             </a>
-            
+
           </div>
 
         </section>
@@ -39,9 +39,9 @@ export default function Footer() {
 
               <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
 
-                <h6 className="text-uppercase fw-bold mb-4">
-                  <i className="fas fa-gem me-3"></i>iTKonnects
-                </h6>
+                <pre><h6 className="text-uppercase fw-bold mb-4">
+                  <i className="fa-solid fa-building"></i> iTKonnects
+                </h6></pre>
                 <p>
                   A service oriented non-profit organisation to make it easier connecting with technology
                 </p>

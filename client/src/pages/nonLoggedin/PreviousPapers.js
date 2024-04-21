@@ -6,6 +6,7 @@ import SubjectsListPapers from '../../Data/SubjectsListPapers';
 import axios from 'axios';
 import Spinner from '../../components/UIComponents/Spinner';
 import toast from 'react-hot-toast';
+import randomint from "random-int"
 
 const PreviousPapers = () => {
   const [dept, setDept] = useState("");
@@ -13,6 +14,8 @@ const PreviousPapers = () => {
   const [suggestions, setSuggestions] = useState([]);
   const [papers, setPapers] = useState([]);
   const [loading, setLoading] = useState(false)
+
+  const colors = ["red", "green", "yellow", "Tomato", "Orange", "MediumSeaGreen", "SlateBlue"]
 
   const getPapers = async () => {
     setLoading(true)
@@ -49,21 +52,36 @@ const PreviousPapers = () => {
   return (
     <>
       <Nav />
-      <div className='m-3' style={{border:"solid 1px black", display:"flex",flexDirection:"row",justifyContent:"space-evenly" }}>
+      <div className='m-3' style={{ border: "solid 1px black", display: "flex", flexDirection: "row", justifyContent: "space-evenly" }}>
         <div className="filters m-2 p-2" >
           <h4 className='m-3'>Departments</h4>
-          <Radio.Group onChange={(e) => setDept(e.target.value)} value={dept} className="d-flex" style={{ flexDirection: "column"}}>
-            <Radio value={"it"} className="m-3">COMPUTERS</Radio>
+          <Radio.Group onChange={(e) => setDept(e.target.value)} value={dept} className="d-flex" style={{ flexDirection: "column" }}>
+
+            
+            {/* <Radio value={"it"} className="m-3"><button className='btn btn-sm btn-primary'>Computers</button></Radio>
+            <Radio value={"ece"} className="m-3"><button className='btn btn-sm btn-primary'>ECE</button></Radio>
+            <Radio value={"eee"} className="m-3"><button className='btn btn-sm btn-primary'>EEE</button></Radio>
+            <Radio value={"eie"} className="m-3"><button className='btn btn-sm btn-primary'>EIE</button></Radio>
+            <Radio value={"civil"} className="m-3"><button className='btn btn-sm btn-primary'>CIVIL</button></Radio>
+            <Radio value={"mech"} className="m-3"><button className='btn btn-sm btn-primary'>MECH</button></Radio>
+            <Radio value={"mat"} className="m-3"><button className='btn btn-sm btn-primary'>MATHS</button></Radio>
+            <Radio value={"phy"} className="m-3"><button className='btn btn-sm btn-primary'>PHY</button></Radio>
+            <Radio value={"che"} className="m-3"><button className='btn btn-sm btn-primary'>CHE</button></Radio>
+            <Radio value={"eng"} className="m-3"><button className='btn btn-sm btn-primary'>ENG</button></Radio>
+            <Radio value={"others"} className="m-3"><button className='btn btn-sm btn-primary'>OTHERS</button></Radio> */}
+
+            <Radio value={"all"} className="m-3">ALL</Radio>
+            <Radio value={"it"} className="m-3">Computers</Radio>
             <Radio value={"ece"} className="m-3">ECE</Radio>
             <Radio value={"eee"} className="m-3">EEE</Radio>
             <Radio value={"eie"} className="m-3">EIE</Radio>
             <Radio value={"civil"} className="m-3">CIVIL</Radio>
             <Radio value={"mech"} className="m-3">MECH</Radio>
-            <Radio value={"mat"} className="m-3">Mat</Radio>
-            <Radio value={"phy"} className="m-3">Phy</Radio>
-            <Radio value={"che"} className="m-3">Che</Radio>
-            <Radio value={"eng"} className="m-3">Eng</Radio>
-            <Radio value={"others"} className="m-3">Others</Radio>
+            <Radio value={"mat"} className="m-3">MATHS</Radio>
+            <Radio value={"phy"} className="m-3">PHY</Radio>
+            <Radio value={"che"} className="m-3">CHE</Radio>
+            <Radio value={"eng"} className="m-3">ENG</Radio>
+            <Radio value={"others"} className="m-3">OTHERS</Radio>
           </Radio.Group>
 
 
@@ -77,7 +95,7 @@ const PreviousPapers = () => {
               placeholder={`Search among ${papers.length} available subjects`}
               aria-label="Search"
               value={sub}
-              style={{minWidth:"700px"}}
+              style={{ minWidth: "700px" }}
               onChange={(e) => {
                 setSub(e.target.value);
                 filterSuggestions(e.target.value);
@@ -85,18 +103,19 @@ const PreviousPapers = () => {
             />
             {sub && <i className='fa-solid fa-multiply fa-1x mx-2' style={{ fontSize: "1rem" }} onClick={() => setSub("")}></i>}
             <button className="btn btn-sm btn-outline-success m-2 my-sm-0" type="submit">Search</button>
-            
+
           </div>
 
-          
+
 
           <div className="card-container" style={{ maxHeight: "calc(100% - 100px)", overflowY: "auto" }}>
             {
               loading && <Spinner />
             }
             {papers.map((paper, index) => (
-              <div key={index} title={paper.sub} className="card m-3">
-                <p style={{ fontSize: "1.2rem", display:'flex',flexDirection:"row",justifyContent:"space-around" }}>{paper.code}-{paper.sub} : {paper.dept}</p>
+              <div key={index} title={paper.sub} className="card m-3" >
+                {/* style={{ background: colors[randomint(0, 6)]  }} */}
+                <p style={{ fontSize: "1.2rem", display: 'flex', flexDirection: "row", justifyContent: "space-around" }}>{paper.code}-{paper.sub} : {paper.dept}</p>
                 <div className='d-flex justify-content-between'>
                   <p style={{ fontSize: "0.8rem", fontWeight: "500" }}>{paper.des}</p>
                   <a href={paper.link} className='btn btn-sm btn-primary text-white' target="_blank" rel="noopener noreferrer">Open Folder</a>
