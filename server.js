@@ -41,10 +41,6 @@ app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/subjects", QpaperRoutes);
 
 
-
-
-
-
 //to get userdata
 app.use("/api/v1/users", UserRoutes)
 

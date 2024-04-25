@@ -20,6 +20,15 @@ export default function Nav() {
         toast.success("Logged out successfully");
         navigate("/login")
     };
+
+
+
+    // const [isloggedin, setIsLoggedIn] = useState(Boolean(auth?.user?._id.length));
+
+    
+
+    // Later in your code where you update the login state, make sure to update `isloggedin` accordingly.
+
     return (
         <>
             <header className="bg-dark text-white text-center py-3">
@@ -112,7 +121,7 @@ export default function Nav() {
                             <>
                                 <ul className="navbar-nav p-2 mx-5">
 
-                                    
+
 
                                     <li className="nav-item">
                                         <Link className="nav-link active p-3" aria-current="page" to="/dashboard/user/notifications"><i className="fa-solid fa-bell"></i></Link>

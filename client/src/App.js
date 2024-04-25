@@ -26,6 +26,7 @@ import AddHostel from './pages/admin/AddHostel';
 import PreviousPapers from './pages/nonLoggedin/PreviousPapers';
 import AddPaper from './pages/admin/AddPaper';
 import PlacementMaterials from './pages/user/PlacementMaterials';
+import Users from './pages/admin/Users';
 
 
 
@@ -59,6 +60,7 @@ function App() {
             <Route path='admin' element={<AdminDashboard />} />
             <Route path='admin/add-hostel' element={<AddHostel />} />
             <Route path='admin/add-paper' element={<AddPaper />} />
+            <Route path='admin/users' element={<Users />} />
             
             
           </Route>

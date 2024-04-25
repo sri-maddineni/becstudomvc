@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import Nav from "../../components/UIComponents/Nav";
 import Footer from '../../components/layouts/Footer';
 import { Checkbox, Radio, Col, Row } from 'antd';
@@ -10,8 +10,9 @@ import randomint from "random-int"
 
 const PreviousPapers = () => {
   const [dept, setDept] = useState("");
-  const [sub, setSub] = useState("");
+  const [subsearch, setSubsearch] = useState("");
   const [suggestions, setSuggestions] = useState([]);
+  const [filtered, setFiltered] = useState([]); // State for filtered papers
   const [papers, setPapers] = useState([]);
   const [loading, setLoading] = useState(false)
 
@@ -23,6 +24,7 @@ const PreviousPapers = () => {
       const res = await axios.get(`${process.env.REACT_APP_API}/api/v1/subjects/get-papers`);
       if (res.data.success) {
         setPapers(res.data.papers);
+        setFiltered(res.data.papers); // Initialize filtered papers with all papers
       }
     } catch (error) {
       console.log(error);
@@ -44,9 +46,25 @@ const PreviousPapers = () => {
     setSuggestions(filtered);
   };
 
-  const handleSelectSubject = (selectedSub) => {
-    setSub(selectedSub.name);
-    setSuggestions([]);
+  // const handleSelectSubject = (selectedSub) => {
+  //   setSub(selectedSub.name);
+  //   setSuggestions([]);
+  // };
+
+  const handlesearch = () => {
+    if (subsearch) {
+      const filteredPapers = papers.filter(item =>
+        item.sub.toLowerCase().includes(subsearch.toLowerCase()) ||  item.code.toLowerCase().includes(subsearch.toLowerCase())
+      );
+      setFiltered(filteredPapers);
+    } else {
+      // If the search input is empty, set filtered papers to all papers
+      setFiltered(papers);
+    }
+
+    if(!subsearch){
+      setFiltered(papers)
+    }
   };
 
   return (
@@ -94,15 +112,15 @@ const PreviousPapers = () => {
               type="search"
               placeholder={`Search among ${papers.length} available subjects`}
               aria-label="Search"
-              value={sub}
+              value={subsearch}
               style={{ minWidth: "700px" }}
               onChange={(e) => {
-                setSub(e.target.value);
+                setSubsearch(e.target.value);
                 filterSuggestions(e.target.value);
+                handlesearch();
               }}
             />
-            {sub && <i className='fa-solid fa-multiply fa-1x mx-2' style={{ fontSize: "1rem" }} onClick={() => setSub("")}></i>}
-            <button className="btn btn-sm btn-outline-success m-2 my-sm-0" type="submit">Search</button>
+            {subsearch && <i className='fa-solid fa-multiply fa-1x mx-2' style={{ fontSize: "1rem" }} onClick={() => setSubsearch("")}></i>}
 
           </div>
 
@@ -112,7 +130,8 @@ const PreviousPapers = () => {
             {
               loading && <Spinner />
             }
-            {papers.map((paper, index) => (
+            
+            {filtered.map((paper, index) => (
               <div key={index} title={paper.sub} className="card m-3" >
                 {/* style={{ background: colors[randomint(0, 6)]  }} */}
                 <p style={{ fontSize: "1.2rem", display: 'flex', flexDirection: "row", justifyContent: "space-around" }}>{paper.code}-{paper.sub} : {paper.dept}</p>

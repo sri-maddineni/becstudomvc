@@ -5,6 +5,7 @@ import toast from 'react-hot-toast'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import Nav from '../../components/UIComponents/Nav'
 
 const ForgotPassword = () => {
 
@@ -36,10 +37,10 @@ const ForgotPassword = () => {
 
     return (
         <>
-            <Header />
+            <Nav/>
             <div><h1 className='text-center m-2'>Reset password</h1></div>
-            <div className="total text-center my-2">
-                <div className="register my-2">
+            <div className="container total text-center my-2">
+                <div className="container register my-2">
                     <form className="text-center m-3" onSubmit={handlesubmit}>
 
                         <div className="mb-3">
@@ -88,13 +89,7 @@ const ForgotPassword = () => {
 
                         </div>
 
-                        {/*
-          <div className="mb-3 form-check">
-            <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-            <label htmlFor="">Accept terms and conditions</label>
-          </div>
-          */}
-
+          
 
 
 

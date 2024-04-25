@@ -188,13 +188,13 @@ export const testController = (req, res) => {
 
 export const getUserData = async (req, res) => {
   try {
-    const { uid } = req.params;
+    const uid = req.params.uid;
+
+    console.log(uid,"uid logged ehre")
 
     if (!uid) {
-      res.status(400).send({ message: "id is required" });
+      return res.status(400).send({ message: "id is required" });
     }
-
-
 
     const existing = await userModel.findById(uid)
     if (!existing) {
@@ -222,5 +222,9 @@ export const getUserData = async (req, res) => {
     })
   }
 }
+
+
+
+
 
 
