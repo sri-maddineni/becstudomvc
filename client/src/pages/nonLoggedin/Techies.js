@@ -40,10 +40,9 @@ const Techies = () => {
             </abbr>
           </li>
           <li className="breadcrumb-item"><NavLink to="/">Home</NavLink></li>
-          <li className="breadcrumb-item"><NavLink to="/dashboard/user/profile">Profile</NavLink></li>
+          
 
-
-          <li className="breadcrumb-item active" aria-current="page">Listings</li>
+          <li className="breadcrumb-item active" aria-current="page">Techies</li>
         </ol>
       </nav>
     );
