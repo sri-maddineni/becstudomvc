@@ -4,10 +4,23 @@ import {
     getPapersController
  
 } from "../controllers/SubController.js"
+import {
+  
+  AddTechieController
+
+} from "../controllers/AdminController.js"
 
 import { isAdmin, isUser, requireSignIn } from "../middlewares/authMiddleware.js";
 
 const router = express.Router();
+
+
+//this routes is for admin routes this might be for addign question paper or everything
+
+
+//for adding a techie
+router.post("/add-techie",requireSignIn,isAdmin,AddTechieController)
+
 
 ////register user method post
 //add a subject for question papers

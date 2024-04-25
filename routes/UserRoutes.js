@@ -18,7 +18,4 @@ router.get("/userdata/:uid", getUserData);
 //get all users for admin purpose
 router.get("/getusers",requireSignIn,isAdmin,getuserscontroller)
 
-
-
-
 export default router;

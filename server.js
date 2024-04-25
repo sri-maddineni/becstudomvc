@@ -5,7 +5,9 @@ import morgan from "morgan";
 import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoute.js"
 import QpaperRoutes from "./routes/QpaperRoutes.js"
+import AdminRoutes from "./routes/AdminRoutes.js"
 import cors from "cors";
+import PagesRoutes from "./routes/PagesRoutes.js"
 
 
 import UserRoutes from "./routes/UserRoutes.js"
@@ -43,6 +45,14 @@ app.use("/api/v1/subjects", QpaperRoutes);
 
 //to get userdata
 app.use("/api/v1/users", UserRoutes)
+
+
+//admin routes for all admin relateed tasks
+app.use("/api/v1/admin",AdminRoutes)
+
+
+//admin routes for all user pages relateed tasks
+app.use("/api/v1/pages",PagesRoutes)
 
 
 //rest api

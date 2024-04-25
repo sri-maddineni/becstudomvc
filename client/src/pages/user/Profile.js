@@ -12,7 +12,11 @@ import UserMenu from "./UserMenu";
 
 const Profile = () => {
     const [auth] = useContext(AuthContext);
-    const [admin, setadmin] = useState(auth?.user?.role === 0)
+    const [isadmin, setisadmin] = useState(auth?.user?.role)
+
+    toast.success(Boolean(!auth?.user?.role))
+
+    
 
 
     return (
@@ -22,7 +26,7 @@ const Profile = () => {
             <div style={{ flex: "wrap", display: "flex", flexDirection: "row" }} className="m-3">
                 <div className="container" style={{display:"flex",flexDirection:"row"}}>
                     <div className="col-3">
-                        <AdminMenu />
+                        {isadmin && <AdminMenu />}
                     </div>
                     <div className="col-9" style={{minHeight:"30vh"}}>
                         

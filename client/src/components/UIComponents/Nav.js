@@ -72,10 +72,10 @@ export default function Nav() {
                                     Academics
                                 </a>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><Link className="dropdown-item" to={auth?.user ? "/dashboard/user/post-potential" : "/login"} >Attendence</Link></li>
-                                    <li><Link className="dropdown-item" to={auth?.user ? "/dashboard/user/post-potential" : "/login"} >Notices</Link></li>
-                                    <li><Link className="dropdown-item" to="/dashboard/user/post-equipment" >Internals Calc</Link></li>
-                                    <li><Link className="dropdown-item" to="/dashboard/user/post-equipment" >Techies</Link></li>
+                                    <li><a className="dropdown-item" href={"https://www.webprosindia.com/bapatlaec/default.aspx"} target='_blank' >Attendence</a></li>
+                                    
+                                    <li><a className="dropdown-item"  href={"https://play.google.com/store/apps/details?id=com.internalscalci1.internalscalci&hl=en-IN"} target='_blank' >Internals Calc</a></li>
+                                    <li><Link className="dropdown-item" to="/dashboard/user/techies" >Techies</Link></li>
                                     <li><Link className="dropdown-item" to="/dashboard/user/post-equipment" >Materials</Link></li>
                                     <li><Link className="dropdown-item" to="/dashboard/user/post-equipment" >Important links</Link></li>
                                 </ul>

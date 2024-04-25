@@ -27,6 +27,8 @@ import PreviousPapers from './pages/nonLoggedin/PreviousPapers';
 import AddPaper from './pages/admin/AddPaper';
 import PlacementMaterials from './pages/user/PlacementMaterials';
 import Users from './pages/admin/Users';
+import AddTechie from './pages/admin/AddTechie';
+import Techies from './pages/nonLoggedin/Techies';
 
 
 
@@ -51,9 +53,9 @@ function App() {
 
           <Route path='/dashboard' element={<PrivateRoute />}>
             <Route path='user' element={<Dashboard />} />
-            
+            <Route path='user/techies' element={<Techies />} />
 
-            
+
           </Route>
 
           <Route path='/dashboard' element={<AdminRoute />}>
@@ -61,14 +63,18 @@ function App() {
             <Route path='admin/add-hostel' element={<AddHostel />} />
             <Route path='admin/add-paper' element={<AddPaper />} />
             <Route path='admin/users' element={<Users />} />
-            
-            
+            <Route path='admin/add-techie' element={<AddTechie />} />
+
+
           </Route>
+
+          {/* public routes for all can use */}
 
 
           <Route path='/forgot-password' element={<ForgotPassword />} />
           <Route path='/previous-papers' element={<PreviousPapers />} />
           <Route path='/placement-materials' element={<PlacementMaterials />} />
+          <Route path='/techies' element={<Techies />} />
 
 
 
@@ -76,7 +82,7 @@ function App() {
           <Route path='/register' element={<Register />} />
           <Route path='/*' element={<Pagenotfound />} />
 
-         
+
         </Routes>
 
       </AuthState>
