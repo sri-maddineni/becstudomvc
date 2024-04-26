@@ -9,7 +9,7 @@ import { NavLink, useNavigate } from 'react-router-dom'
 
 const Techies = () => {
 
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   const [techies, setTechies] = useState([])
 
@@ -18,7 +18,7 @@ const Techies = () => {
       const res = await axios.get(`${process.env.REACT_APP_API}/api/v1/pages/get-techies`)
       if (res.data.success) {
         console.log(res)
-        toast.success(res.data.message)
+
         setTechies(res.data.result)
       }
     } catch (error) {
@@ -30,33 +30,34 @@ const Techies = () => {
     getTechies();
   }, [])
 
-  const Bread = () => {
+
+  const Breadcrumb = () => {
     return (
-      <nav aria-label="breadcrumb">
-        <ol className="breadcrumb">
-        <li className="mr-2" style={{ cursor: 'pointer' }} onClick={() => navigate(-1)}>
+      <nav aria-label="breadcrumb" style={{margin:"0",padding:"0"}}>
+        <ol className="breadcrumb m-2">
+          {/* <li className="mr-2" style={{ cursor: 'pointer' }} onClick={() => navigate(-1)}>
             <abbr title="Go back">
-              {/* <IOArro style={{ fontSize: '1.8rem' }} /> */}
+              <IoArrowBackCircle style={{ fontSize: '1.8rem' }} />
             </abbr>
-          </li>
+          </li> */}
           <li className="breadcrumb-item"><NavLink to="/">Home</NavLink></li>
-          
 
           <li className="breadcrumb-item active" aria-current="page">Techies</li>
         </ol>
       </nav>
     );
   };
-  
+
+
   return (
     <>
       <Nav />
-      <Bread/>
+      <Breadcrumb />
       <div className="container" style={{ minHeight: "50vh" }}>
-        <div className="container" style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
+        <div className="container" style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "space-around" }}>
           {
             techies.map(techie => (
-              <div className="card" style={{ "width": "18rem" }}>
+              <div className="card" style={{ "width": "17rem" }}>
 
                 <img className="card-img-top" src={techie.imglink} style={{ width: "8rem", height: "8rem", objectFit: "cover" }} alt="Card image cap" />
                 <div className="card-body">

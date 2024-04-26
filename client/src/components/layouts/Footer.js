@@ -16,13 +16,13 @@ export default function Footer() {
 
           <div>
 
-            <a href="https://www.itkonnects.com" target="_blank" className="me-4 text-danger" style={{ "text-decoration": " none;" }}>
+            <a href="https://www.itkonnects.com" target="_blank" className="me-4 text-danger" style={{ textDecoration: " none" }}>
               <i className="fa-brands fa-google me-3 fa-2x"></i>
             </a>
-            <a href="https://www.instagram.com/bec_startup/" target="_blank" className="me-4 text-danger" style={{ "text-decoration": " none;" }}>
+            <a href="https://www.instagram.com/bec_startup/" target="_blank" className="me-4 text-danger" style={{ textDecoration: " none" }}>
               <i className="fa-brands fa-instagram me-3 fa-2x"></i>
             </a>
-            <a href="https://www.linkedin.com/company/95768956/" target="_blank" className="me-4 text-danger" style={{ "text-decoration": " none;" }}>
+            <a href="https://www.linkedin.com/company/95768956/" target="_blank" className="me-4 text-danger" style={{ textDecoration: " none" }}>
               <i className="fa-brands fa-linkedin me-3 fa-2x"></i>
             </a>
 
@@ -67,7 +67,7 @@ export default function Footer() {
 
 
 
-        <div className="text-center p-4" style={{ "background-color": "rgba(0, 0, 0, 0.05);" }}>
+        <div className="text-center p-4" style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}>
           © 2023 Copyright:
           <a className="text-reset fw-bold" href="https://www.itkonnects.com/">iTKonnects.com</a>
         </div>

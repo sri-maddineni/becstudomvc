@@ -4,7 +4,8 @@ import { isAdmin, isUser, requireSignIn } from "../middlewares/authMiddleware.js
 
 
 import {
-    AddTechieController
+    AddTechieController,
+    AddCompanyController
 } from "../controllers/AdminController.js"
 
 
@@ -19,6 +20,12 @@ const router = express.Router();
 
 //for adding a techie
 router.post("/add-techie", requireSignIn, isAdmin, AddTechieController)
+
+
+
+//for adding a techie
+router.post("/add-company", requireSignIn, isAdmin, AddCompanyController)
+
 
 
 export default router;

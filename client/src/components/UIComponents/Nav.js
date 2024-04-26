@@ -34,7 +34,7 @@ export default function Nav() {
             <header className="bg-dark text-white text-center py-3">
                 <h1 className="mt-3">BEC Studo</h1>
             </header>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark navbar-sm" style={{ '--bs-bg-opacity': '0.8', 'height': '60px' }} >
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark navbar-sm" style={{ '--bs-bg-opacity': '0.8', 'height': '50px' }} >
                 <div className="container-fluid ">
                     <Link className="navbar-brand text-warning" to="/">Home</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navi" aria-controls="navi" aria-expanded="false" aria-label="Toggle navigation">
@@ -86,13 +86,13 @@ export default function Nav() {
                                 <a href="" className="nav-link text-white p-3 disabled">
                                     Placements
                                 </a>
-                                <ul class="dropdown-menu">
-                                    <li><Link class="dropdown-item" to="/placement-materials">Placement Materials </Link></li>
+                                <ul className="dropdown-menu">
+                                    <li><Link className="dropdown-item" to="/placement-materials">Placement Materials </Link></li>
                                     <li>
-                                        <a class="dropdown-item disabled" href="#">Placement offers</a>
+                                        <a className="dropdown-item disabled" href="#">Placement offers</a>
 
-                                        <ul class="submenu">
-                                            <li><a class="dropdown-item" href="../placements/y20placements.html">Y20 Placements</a></li>
+                                        <ul className="submenu">
+                                            <li><Link className="dropdown-item" to="/dashboard/user/y20placements">Y20 Placements</Link></li>
                                         </ul>
                                     </li>
 
@@ -135,7 +135,7 @@ export default function Nav() {
                                             <li><Link className="dropdown-item" to="/members" >Members</Link></li>
                                             <li><Link className="dropdown-item" to="/founder" >Founder</Link></li>
                                             <li><Link className="dropdown-item" to="/founder" >Join iTKonnects (Part time)</Link></li>
-                                            <li><a style={{ color: "inherit", textDecoration: "none" }} className='ml-3' href="https://www.itkonnects.com" target='_blank'>iTKonnects</a></li>
+                                            <li><a className="dropdown-item" href={"https://www.itkonnects.com"} target='_blank'>iTKonnects</a></li>
                                         </ul>
                                     </li>
 

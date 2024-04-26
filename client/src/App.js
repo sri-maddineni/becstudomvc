@@ -29,6 +29,8 @@ import PlacementMaterials from './pages/user/PlacementMaterials';
 import Users from './pages/admin/Users';
 import AddTechie from './pages/admin/AddTechie';
 import Techies from './pages/nonLoggedin/Techies';
+import Y20Placements from './pages/user/Y20Placements';
+import AddCompany from './pages/admin/AddCompany';
 
 
 
@@ -54,6 +56,7 @@ function App() {
           <Route path='/dashboard' element={<PrivateRoute />}>
             <Route path='user' element={<Dashboard />} />
             <Route path='user/techies' element={<Techies />} />
+            <Route path='user/y20placements' element={<Y20Placements />} />
 
 
           </Route>
@@ -64,6 +67,8 @@ function App() {
             <Route path='admin/add-paper' element={<AddPaper />} />
             <Route path='admin/users' element={<Users />} />
             <Route path='admin/add-techie' element={<AddTechie />} />
+            <Route path='admin/add-company' element={<AddCompany />} />
+
 
 
           </Route>
