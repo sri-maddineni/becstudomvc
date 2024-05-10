@@ -2,7 +2,8 @@ import express from "express";
 
 import {
     getTechiesController,
-    getCompaniesController
+    getCompaniesController,
+    getStudentsPlacementsController
 } from "../controllers/PagesController.js"
 import { isUser, requireSignIn } from "../middlewares/authMiddleware.js";
 
@@ -15,7 +16,11 @@ const router = express.Router();
 router.get("/get-techies", getTechiesController)
 
 //for getting companies list
-router.get("/get-companies",getCompaniesController)
+router.get("/placements/get-companies",getCompaniesController)
+
+
+//for getting companies list
+router.get("/placements/get-students",getStudentsPlacementsController)
 
 
 export default router;

@@ -1,5 +1,4 @@
-import mongoose from "mongoose";
-
+import mongoose, { mongo } from "mongoose";
 
 export const CompanySchema = new mongoose.Schema(
     {
@@ -42,38 +41,44 @@ export const CompanySchema = new mongoose.Schema(
 );
 
 
-
-
-// const TechieSchema = new mongoose.Schema(
-//     {
-//         title: {
-//             type: String,
-//             required: true,
-//             trim: true,
-//         },
-//         name: {
-//             type: String,
-//             required: true,
-//             unique: true,
-//         },
-//         imglink: {
-//             type: String,
-//             required: true,
-//         },
-//         profile: {
-//             type: String,
-//             required: true,
-//         },
-//         des: {
-//             type: String,
-//             required: true,
-//         },
-
+// const companySchema = new mongoose.Schema({
+//     companyName: {
+//         type: String,
 //     },
-//     { timestamps: true }
-// );
+//     salary: {
+//         type: Number,
+//     },
+//     process: {
+//         type: String,
+//     },
+//     role: {
+//         type: String
+//     }
+// });
 
 
+const studentPlacementSchema = new mongoose.Schema(
+    {
+        regno: {
+            type: String,
+            required: true
+        },
+        name: {
+            type: String,
+            required: true
+
+        },
+        count: {
+            type: String,
+            required: true
+        },
+        sal: {
+            type: String,
+            required: true
+        },
+        
+    }
+)
 
 export const CompanyModel = mongoose.model("Companies", CompanySchema);
-// export const TechieModel = mongoose.model("Techies", TechieSchema);
+export const StuPlaModel = mongoose.model("studentsPlacements", studentPlacementSchema);

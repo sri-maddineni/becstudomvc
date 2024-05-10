@@ -3,28 +3,46 @@ import Footer from "../components/layouts/Footer";
 import { Toaster } from "react-hot-toast";
 import "./Homepage.css";
 import Nav from "../components/UIComponents/Nav";
+import LatestNews from "../components/SideComponents/LatestNews";
+import SiteNews from "../components/SideComponents/SiteNews";
+import  { CountServices,HomepageServices } from "../components/SideComponents/HomepageServices";
+
 
 const Homepage = () => {
-  const carouselImages = [
-    "https://st2.depositphotos.com/3837271/8401/i/950/depositphotos_84015096-stock-photo-hostels-written-in-search-bar.jpg",
-    "https://shorturl.at/mEFY0",
-    "https://images.shiksha.com/mediadata/images/articles/1581333516phpVSycrt.jpeg",
-  ];
+
 
   return (
     <>
       <Nav />
       <Toaster />
-      <div className="container text-center" style={{  border:"solid 1px black",marginTop:"50px" }}>
-        <div id="carouselExampleSlidesOnly" className="carousel slide" style={{ margin: "30px", display: "inline-block" }} data-ride="carousel" data-interval="5000">
-          <div className="carousel-inner">
-            {carouselImages.map((imageUrl, index) => (
-              <div key={index} className={`carousel-item ${index === 0 ? "active" : ""}`}>
-                <img className="d-block" src={imageUrl} alt={`Slide ${index + 1}`} style={{width:"450px",height:"250px",objectFit:"cover"}} />
-              </div>
-            ))}
+      <div className="container" style={{ display: "flex", flexDirection: "column" }}>
+
+
+        <div className="container" style={{ display: "flex", flexDirection: "row" }}>
+          <div className="col-3 m-2" style={{ border: "solid 1px black", minHeight: "75vh" }}>
+            <h3 className="text-center">College Updates</h3>
+            <hr />
+            <LatestNews />
+          </div>
+          <div className="col-6 m-2" style={{ minHeight: "20vh" }}>
+            <div className="container" style={{ overflowY: "auto", minHeight: "10vh", marginTop: "20px" }}>
+              <HomepageServices />
+            </div>
+          </div>
+          <div className="col-3 m-2" style={{ border: "solid 1px black", minHeight: "20vh" }}>
+            <h3 className="text-center">Site Features</h3>
+            <hr />
+            <SiteNews />
           </div>
         </div>
+
+        <div className="m-2" style={{display:"flex",flexDirection:"row"}}>
+          {CountServices() }
+        </div>
+
+
+
+
       </div>
       <Footer />
     </>

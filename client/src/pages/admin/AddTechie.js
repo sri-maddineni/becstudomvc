@@ -32,7 +32,7 @@ const AddTechie = () => {
         <>
             <Nav />
             <div className="conatiner" style={{ minHeight: "50vh", display: "flex", flexDirection: "row" }}>
-                <div className="col-3 m-4">
+                <div className="col-2 m-4">
                     <AdminMenu />
                 </div>
                 <div className="col-8 m-5">

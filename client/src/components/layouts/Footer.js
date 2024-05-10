@@ -56,7 +56,7 @@ export default function Footer() {
                   <i className="fa fa-envelope me-3"></i>
                   itkonnects@gmail.com
                 </p>
-                <p><i className="fa fa-phone me-3"></i> +91 63042 14514</p>
+                {/* <p><i className="fa fa-phone me-3"></i> +91 63042 14514</p> */}
 
               </div>
 

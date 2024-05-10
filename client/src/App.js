@@ -31,6 +31,7 @@ import AddTechie from './pages/admin/AddTechie';
 import Techies from './pages/nonLoggedin/Techies';
 import Y20Placements from './pages/user/Y20Placements';
 import AddCompany from './pages/admin/AddCompany';
+import AddStudentPlacement from './pages/admin/AddStudentPlacement';
 
 
 
@@ -68,6 +69,8 @@ function App() {
             <Route path='admin/users' element={<Users />} />
             <Route path='admin/add-techie' element={<AddTechie />} />
             <Route path='admin/add-company' element={<AddCompany />} />
+            <Route path='admin/add-student-placement' element={<AddStudentPlacement />} />
+            
 
 
 

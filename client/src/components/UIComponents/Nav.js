@@ -25,7 +25,7 @@ export default function Nav() {
 
     // const [isloggedin, setIsLoggedIn] = useState(Boolean(auth?.user?._id.length));
 
-    
+
 
     // Later in your code where you update the login state, make sure to update `isloggedin` accordingly.
 
@@ -42,18 +42,18 @@ export default function Nav() {
                     </button>
                     <div className="collapse navbar-collapse" id="navi">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li className="nav-item">
-                                <Link className="nav-link active p-3" aria-current="page" to="/hostels">Hostels</Link>
-                            </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link text-white p-3 disabled" href='#' id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false" >
-                                    Rooms
+                                    Accommodation
                                 </a>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><Link className="dropdown-item" to="/dashboard/user/sell-commodity" >Rooms</Link></li>
-                                    <li><Link className="dropdown-item" to="/cp" >Flats</Link></li>
-
+                                    <li><a className="dropdown-item" href={"https://www.webprosindia.com/bapatlaec/default.aspx"} target='_blank' >Attendence</a></li>
+                                    <li><a className="dropdown-item" href={"https://play.google.com/store/apps/details?id=com.internalscalci1.internalscalci&hl=en-IN"} target='_blank' >Internals Calc</a></li>
+                                    <li><Link className="dropdown-item" to="/dashboard/user/techies" >Techies</Link></li>
+                                    <li><Link className="dropdown-item" to="/dashboard/user/post-equipment" >Materials</Link></li>
+                                    <li><Link className="dropdown-item" to="/dashboard/user/post-equipment" >Important links</Link></li>
                                 </ul>
+
                             </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link text-white p-3 disabled" href='#' id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false" >
@@ -73,8 +73,21 @@ export default function Nav() {
                                 </a>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a className="dropdown-item" href={"https://www.webprosindia.com/bapatlaec/default.aspx"} target='_blank' >Attendence</a></li>
-                                    
-                                    <li><a className="dropdown-item"  href={"https://play.google.com/store/apps/details?id=com.internalscalci1.internalscalci&hl=en-IN"} target='_blank' >Internals Calc</a></li>
+                                    <li><a className="dropdown-item" href={"https://play.google.com/store/apps/details?id=com.internalscalci1.internalscalci&hl=en-IN"} target='_blank' >Internals Calc</a></li>
+                                    <li><Link className="dropdown-item" to="/dashboard/user/techies" >Techies</Link></li>
+                                    <li><Link className="dropdown-item" to="/dashboard/user/post-equipment" >Materials</Link></li>
+                                    <li><Link className="dropdown-item" to="/dashboard/user/post-equipment" >Important links</Link></li>
+                                </ul>
+
+                            </li>
+
+                            <li className="nav-item dropdown">
+                                <a className="nav-link text-white p-3 disabled" href='#' id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false" >
+                                    Results
+                                </a>
+                                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a className="dropdown-item" href={"https://www.webprosindia.com/bapatlaec/default.aspx"} target='_blank' >Attendence</a></li>
+                                    <li><a className="dropdown-item" href={"https://play.google.com/store/apps/details?id=com.internalscalci1.internalscalci&hl=en-IN"} target='_blank' >Internals Calc</a></li>
                                     <li><Link className="dropdown-item" to="/dashboard/user/techies" >Techies</Link></li>
                                     <li><Link className="dropdown-item" to="/dashboard/user/post-equipment" >Materials</Link></li>
                                     <li><Link className="dropdown-item" to="/dashboard/user/post-equipment" >Important links</Link></li>
@@ -101,8 +114,24 @@ export default function Nav() {
                             </li>
 
 
+
+
                             <li className="nav-item">
                                 <Link className="nav-link active p-3" aria-current="page" to="/previous-papers">Previous papers</Link>
+                            </li>
+
+                            <li className="nav-item dropdown">
+                                <a className="nav-link text-white p-3 disabled" href='#' id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false" >
+                                    Services
+                                </a>
+                                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a className="dropdown-item" href={"https://www.webprosindia.com/bapatlaec/default.aspx"} target='_blank' >Attendence</a></li>
+                                    <li><a className="dropdown-item" href={"https://play.google.com/store/apps/details?id=com.internalscalci1.internalscalci&hl=en-IN"} target='_blank' >Internals Calc</a></li>
+                                    <li><Link className="dropdown-item" to="/dashboard/user/techies" >Techies</Link></li>
+                                    <li><Link className="dropdown-item" to="/dashboard/user/post-equipment" >Materials</Link></li>
+                                    <li><Link className="dropdown-item" to="/dashboard/user/post-equipment" >Important links</Link></li>
+                                </ul>
+
                             </li>
 
 

@@ -53,13 +53,14 @@ const Techies = () => {
     <>
       <Nav />
       <Breadcrumb />
+      <hr />
       <div className="container" style={{ minHeight: "50vh" }}>
         <div className="container" style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "space-around" }}>
           {
             techies.map(techie => (
               <div className="card" style={{ "width": "17rem" }}>
 
-                <img className="card-img-top" src={techie.imglink} style={{ width: "8rem", height: "8rem", objectFit: "cover" }} alt="Card image cap" />
+                <img className="card-img-top mx-1" src={techie.imglink} style={{ width: "8rem", height: "8rem", objectFit: "cover" }} alt="Card image cap" />
                 <div className="card-body">
                   <h5 className="card-title">{techie.title}</h5>
                   <p className="card-text">{techie.des}</p>

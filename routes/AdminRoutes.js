@@ -5,7 +5,8 @@ import { isAdmin, isUser, requireSignIn } from "../middlewares/authMiddleware.js
 
 import {
     AddTechieController,
-    AddCompanyController
+    AddCompanyController,
+    AddStudentPlacecment
 } from "../controllers/AdminController.js"
 
 
@@ -21,6 +22,9 @@ const router = express.Router();
 //for adding a techie
 router.post("/add-techie", requireSignIn, isAdmin, AddTechieController)
 
+
+//for adding a student for placement
+router.post("/add-student-placement", requireSignIn, isAdmin, AddStudentPlacecment)
 
 
 //for adding a techie

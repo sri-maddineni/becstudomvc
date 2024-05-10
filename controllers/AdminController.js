@@ -1,5 +1,5 @@
 import TechieModel from "../models/TechieModel.js"
-import { CompanyModel } from "../models/PagesModal.js"
+import { CompanyModel, StuPlaModel } from "../models/PagesModal.js"
 
 
 export const AddTechieController = async (req, res) => {
@@ -33,17 +33,36 @@ export const AddTechieController = async (req, res) => {
 
 export const AddCompanyController = async (req, res) => {
     try {
-        const { company, no, imglink, high, low, avg, des, link }=req.body
+        const { company, no, imglink, high, low, avg, des, link } = req.body
         const data = { company, no, imglink, high, low, avg, des, link }
-        const result =await new CompanyModel(data).save();
-        if(result){
+        const result = await new CompanyModel(data).save();
+        if (result) {
             return res.status(200).send({
-                success:true,
-                message:"done ",
+                success: true,
+                message: "done ",
                 result
             })
         }
-        
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
+export const AddStudentPlacecment = async (req, res) => {
+    try {
+        const { name, regno, count, sal } = req.body
+        const data = { name, regno, count, sal }
+        const result = await new StuPlaModel(data).save();
+        if (result) {
+            return res.status(200).send({
+                success: true,
+                message: "done ",
+                result
+            })
+        }
+
     } catch (error) {
         console.log(error)
     }
